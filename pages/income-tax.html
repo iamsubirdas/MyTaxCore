@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Income Tax Services | MyTaxCore</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy-deep:#0B2A4A;
+  --navy:#12395F;
+  --gold:#C9A227;
+  --gold-light:#E8C766;
+  --paper:#F7F8FA;
+  --ink:#1B2430;
+  --muted:#5B6472;
+}
+
+.epfo-hero{
+  max-width:820px;
+  margin:0 auto 10px;
+  text-align:center;
+}
+
+.epfo-eyebrow{
+  display:inline-block;
+  font-family:'Work Sans',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:var(--navy-deep);
+  padding:6px 16px;
+  border-radius:20px;
+  margin-bottom:16px;
+}
+
+.epfo-hero h1{
+  font-family:'Playfair Display',serif;
+  font-weight:800;
+  color:var(--navy-deep);
+  letter-spacing:1px;
+}
+
+.epfo-hero p{
+  font-family:'Work Sans',sans-serif;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.section-label{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:22px;
+  color:var(--navy-deep);
+  text-align:center;
+  position:relative;
+  margin:10px 0 30px;
+}
+
+.section-label::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--gold);
+  margin:12px auto 0;
+  border-radius:2px;
+}
+
+.service-list{
+  max-width:1000px;
+  margin:0 auto 30px;
+  background:var(--paper);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:inset 0 0 0 1px rgba(11,42,74,.06);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:4px;
+}
+
+.service-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  background:#fff;
+  padding:16px 18px;
+  margin:8px;
+  border-radius:14px;
+  border-left:4px solid var(--gold);
+  box-shadow:0 6px 16px rgba(11,42,74,.06);
+  transition:.3s ease;
+  font-family:'Work Sans',sans-serif;
+}
+
+.service-item:hover{
+  transform:translateX(4px) translateY(-2px);
+  box-shadow:0 12px 26px rgba(11,42,74,.14);
+  border-left-color:var(--navy-deep);
+}
+
+.service-main{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.service-icon{
+  flex-shrink:0;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--navy-deep);
+  color:var(--gold-light);
+  font-size:15px;
+}
+
+.service-text h3{
+  font-family:'Work Sans',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+  margin:0 0 2px;
+}
+
+.service-text span{
+  font-size:12.5px;
+  color:var(--muted);
+}
+
+.price-seal{
+  flex-shrink:0;
+  min-width:64px;
+  text-align:center;
+  border:2px dashed var(--gold);
+  color:var(--navy-deep);
+  background:#fffdf6;
+  padding:6px 10px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:15px;
+}
+
+.trust-strip{
+  max-width:800px;
+  margin:0 auto 20px;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+  font-family:'Work Sans',sans-serif;
+  font-size:13px;
+  color:var(--navy-deep);
+  font-weight:600;
+}
+
+.trust-strip span i{
+  color:var(--gold);
+  margin-right:6px;
+}
+
+.book-btn{
+  display:block;
+  width:320px;
+  max-width:100%;
+  margin:35px auto 0;
+  text-align:center;
+  background:#25D366;
+  color:#fff;
+  padding:16px;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:bold;
+  font-family:'Work Sans',sans-serif;
+  box-shadow:0 10px 22px rgba(37,211,102,.3);
+  transition:.3s;
+}
+
+.book-btn:hover{
+  background:#128C7E;
+  transform:translateY(-2px);
+  box-shadow:0 14px 26px rgba(18,140,126,.35);
+}
+
+@media(max-width:768px){
+
+  .service-list{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .service-item{
+    font-size:15px;
+    padding:14px;
+    margin:6px 2px;
+  }
+
+  .service-text h3{
+    font-size:14px;
+  }
+
+  .price-seal{
+    min-width:56px;
+    font-size:13px;
+  }
+
+  .trust-strip{
+    gap:14px;
+    font-size:12px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo-box">
+
+<img src="../assets/images/logo.png" class="logo">
+
+<h2>MyTaxCore</h2>
+
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="../index.html#services">Services</a>
+
+<a href="../index.html#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section style="padding:120px 20px 40px;">
+
+<div class="card">
+
+<img src="../assets/images/income-tax.png" class="logo">
+
+<div class="epfo-hero">
+<span class="epfo-eyebrow">Direct Tax Filing & Consultancy</span>
+<h1>Income Tax Services</h1>
+<p>Professional income tax filing, refunds & consultancy — end to end.</p>
+</div>
+
+<div class="trust-strip">
+<span><i class="fa-solid fa-shield-halved"></i>100% Secure</span>
+<span><i class="fa-solid fa-bolt"></i>Fast Processing</span>
+<span><i class="fa-solid fa-user-tie"></i>Expert Assisted</span>
+</div>
+
+<h2 class="section-label">Available Services</h2>
+
+<div class="service-list">
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-invoice"></i></div>
+<div class="service-text"><h3>ITR-1 Filing</h3><span>For salaried individuals</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+<div class="service-text"><h3>ITR-2/3/4 Filing</h3><span>Business, capital gains & pro-income</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+<div class="service-text"><h3>Belated Return Filing</h3><span>File after due date</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-rotate"></i></div>
+<div class="service-text"><h3>Revised Return Filing</h3><span>Correct a filed return</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-id-card"></i></div>
+<div class="service-text"><h3>PAN Card Apply</h3><span>New PAN application</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+<div class="service-text"><h3>PAN Correction</h3><span>Update PAN details</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-link"></i></div>
+<div class="service-text"><h3>Aadhaar-PAN Linking</h3><span>Link Aadhaar with PAN</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+<div class="service-text"><h3>TAN Registration</h3><span>Tax deduction account number</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+<div class="service-text"><h3>TDS Return Filing</h3><span>Form 24Q / 26Q filing</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+<div class="service-text"><h3>TDS Refund</h3><span>Claim excess TDS deducted</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-rotate-left"></i></div>
+<div class="service-text"><h3>Refund Reissue Request</h3><span>Fix failed refund credit</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+<div class="service-text"><h3>Income Tax Notice Reply</h3><span>Respond to department notices</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+<div class="service-text"><h3>Defective Return Response</h3><span>Section 139(9) reply</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+<div class="service-text"><h3>Rectification Request</h3><span>Section 154 correction</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+<div class="service-text"><h3>AIS / Form 26AS Review</h3><span>Match income & tax records</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+<div class="service-text"><h3>Capital Gain Calculation</h3><span>Shares, property & mutual funds</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-calculator"></i></div>
+<div class="service-text"><h3>Advance Tax Calculation</h3><span>Quarterly advance tax estimate</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+<div class="service-text"><h3>Form 15G/15H Filing</h3><span>Avoid TDS deduction</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-certificate"></i></div>
+<div class="service-text"><h3>Form 16/16A Issuance</h3><span>Salary/TDS certificate</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-check-double"></i></div>
+<div class="service-text"><h3>e-Verification of ITR</h3><span>Complete your ITR verification</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+<div class="service-text"><h3>Assessment/Scrutiny Support</h3><span>Assistance during IT assessment</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+<div class="service-text"><h3>Tax Planning & Advisory</h3><span>Legally reduce your tax outgo</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
+<div class="service-text"><h3>House Property Income</h3><span>Rental income tax computation</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-briefcase-medical"></i></div>
+<div class="service-text"><h3>Presumptive Taxation (44AD/44ADA)</h3><span>For small business/professionals</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+<div class="service-text"><h3>NRI Tax Filing</h3><span>Return filing for NRIs</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-user-briefcase"></i></div>
+<div class="service-text"><h3>Offline Work</h3><span>In-person / manual assistance</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-ellipsis"></i></div>
+<div class="service-text"><h3>Others</h3><span>Any other income tax related issue</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+</div>
+
+<a href="https://wa.me/919775515990" class="book-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Book On WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<footer style="text-align:center;padding:25px;background:#0d6efd;color:#fff;">
+
+© 2026 MyTaxCore. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>

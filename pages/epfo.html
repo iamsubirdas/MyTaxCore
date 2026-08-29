@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPFO Services | MyTaxCore</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy-deep:#0B2A4A;
+  --navy:#12395F;
+  --gold:#C9A227;
+  --gold-light:#E8C766;
+  --paper:#F7F8FA;
+  --ink:#1B2430;
+  --muted:#5B6472;
+}
+
+.epfo-hero{
+  max-width:820px;
+  margin:0 auto 10px;
+  text-align:center;
+}
+
+.epfo-eyebrow{
+  display:inline-block;
+  font-family:'Work Sans',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:var(--navy-deep);
+  padding:6px 16px;
+  border-radius:20px;
+  margin-bottom:16px;
+}
+
+.epfo-hero h1{
+  font-family:'Playfair Display',serif;
+  font-weight:800;
+  color:var(--navy-deep);
+  letter-spacing:1px;
+}
+
+.epfo-hero p{
+  font-family:'Work Sans',sans-serif;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.section-label{
+  font-family:'Playfair Display',serif;
+  font-weight:700;
+  font-size:22px;
+  color:var(--navy-deep);
+  text-align:center;
+  position:relative;
+  margin:10px 0 30px;
+}
+
+.section-label::after{
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:var(--gold);
+  margin:12px auto 0;
+  border-radius:2px;
+}
+
+.service-list{
+  max-width:1000px;
+  margin:0 auto 30px;
+  background:var(--paper);
+  border-radius:18px;
+  padding:14px;
+  box-shadow:inset 0 0 0 1px rgba(11,42,74,.06);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:4px;
+}
+
+.service-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  background:#fff;
+  padding:16px 18px;
+  margin:8px;
+  border-radius:14px;
+  border-left:4px solid var(--gold);
+  box-shadow:0 6px 16px rgba(11,42,74,.06);
+  transition:.3s ease;
+  font-family:'Work Sans',sans-serif;
+}
+
+.service-item:hover{
+  transform:translateX(4px) translateY(-2px);
+  box-shadow:0 12px 26px rgba(11,42,74,.14);
+  border-left-color:var(--navy-deep);
+}
+
+.service-main{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.service-icon{
+  flex-shrink:0;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--navy-deep);
+  color:var(--gold-light);
+  font-size:15px;
+}
+
+.service-text h3{
+  font-family:'Work Sans',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  color:var(--ink);
+  margin:0 0 2px;
+}
+
+.service-text span{
+  font-size:12.5px;
+  color:var(--muted);
+}
+
+.price-seal{
+  flex-shrink:0;
+  min-width:64px;
+  text-align:center;
+  border:2px dashed var(--gold);
+  color:var(--navy-deep);
+  background:#fffdf6;
+  padding:6px 10px;
+  border-radius:10px;
+  font-weight:700;
+  font-size:15px;
+}
+
+.trust-strip{
+  max-width:800px;
+  margin:0 auto 20px;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+  font-family:'Work Sans',sans-serif;
+  font-size:13px;
+  color:var(--navy-deep);
+  font-weight:600;
+}
+
+.trust-strip span i{
+  color:var(--gold);
+  margin-right:6px;
+}
+
+.book-btn{
+  display:block;
+  width:320px;
+  max-width:100%;
+  margin:35px auto 0;
+  text-align:center;
+  background:#25D366;
+  color:#fff;
+  padding:16px;
+  border-radius:40px;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:bold;
+  font-family:'Work Sans',sans-serif;
+  box-shadow:0 10px 22px rgba(37,211,102,.3);
+  transition:.3s;
+}
+
+.book-btn:hover{
+  background:#128C7E;
+  transform:translateY(-2px);
+  box-shadow:0 14px 26px rgba(18,140,126,.35);
+}
+
+@media(max-width:768px){
+
+  .service-list{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .service-item{
+    font-size:15px;
+    padding:14px;
+    margin:6px 2px;
+  }
+
+  .service-text h3{
+    font-size:14px;
+  }
+
+  .price-seal{
+    min-width:56px;
+    font-size:13px;
+  }
+
+  .trust-strip{
+    gap:14px;
+    font-size:12px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo-box">
+
+<img src="../assets/images/logo.png" class="logo">
+
+<h2>MyTaxCore</h2>
+
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="../index.html#services">Services</a>
+
+<a href="../index.html#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section style="padding:120px 20px 40px;">
+
+<div class="card">
+
+<img src="../assets/images/epfo.png" class="logo">
+
+<div class="epfo-hero">
+<span class="epfo-eyebrow">Government Documentation Assistance</span>
+<h1>EPFO Services</h1>
+<p>Fast, secure & professional handling of your EPF paperwork — end to end.</p>
+</div>
+
+<div class="trust-strip">
+<span><i class="fa-solid fa-shield-halved"></i>100% Secure</span>
+<span><i class="fa-solid fa-bolt"></i>Fast Processing</span>
+<span><i class="fa-solid fa-user-tie"></i>Expert Assisted</span>
+</div>
+
+<h2 class="section-label">Available Services</h2>
+
+<div class="service-list">
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+<div class="service-text"><h3>PF Withdrawal (Full Settlement)</h3><span>Form 19 - Final PF claim</span></div>
+</div>
+<div class="price-seal">1K/₹25</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+<div class="service-text"><h3>Partial PF Withdrawal</h3><span>Form 31 - Advance claim</span></div>
+</div>
+<div class="price-seal">1K/₹25</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+<div class="service-text"><h3>Pension Withdrawal</h3><span>Form 10C claim</span></div>
+</div>
+<div class="price-seal">1K/₹25</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-certificate"></i></div>
+<div class="service-text"><h3>Scheme Certificate</h3><span>Pension continuity proof</span></div>
+</div>
+<div class="price-seal">₹350</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-right-left"></i></div>
+<div class="service-text"><h3>Transfer Claim</h3><span>Form 13 - PF transfer</span></div>
+</div>
+<div class="price-seal">₹300</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-heart-crack"></i></div>
+<div class="service-text"><h3>Death Claim Settlement</h3><span>Form 20 / 10D</span></div>
+</div>
+<div class="price-seal">₹...</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-id-badge"></i></div>
+<div class="service-text"><h3>UAN Activation</h3><span>Activate your UAN number</span></div>
+</div>
+<div class="price-seal">₹150</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+<div class="service-text"><h3>UAN Registration</h3><span>New UAN allotment</span></div>
+</div>
+<div class="price-seal">₹...</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-link"></i></div>
+<div class="service-text"><h3>UAN-Aadhaar Linking</h3><span>Link Aadhaar to UAN</span></div>
+</div>
+<div class="price-seal">₹15000-25000</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-signature"></i></div>
+<div class="service-text"><h3>Name Change</h3><span>Correct your name on record</span></div>
+</div>
+<div class="price-seal">₹500-1500</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-calendar-day"></i></div>
+<div class="service-text"><h3>DOB Correction</h3><span>Fix date of birth mismatch</span></div>
+</div>
+<div class="price-seal">₹500-1500</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-people-arrows"></i></div>
+<div class="service-text"><h3>Father/Husband Name Correction</h3><span>Update relation name</span></div>
+</div>
+<div class="price-seal">₹500-1500</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-venus-mars"></i></div>
+<div class="service-text"><h3>Gender Correction</h3><span>Fix gender on record</span></div>
+</div>
+<div class="price-seal">₹250</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+<div class="service-text"><h3>KYC Update</h3><span>Keep your KYC details current</span></div>
+</div>
+<div class="price-seal">₹200</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-fingerprint"></i></div>
+<div class="service-text"><h3>Aadhaar Update</h3><span>Update/seed Aadhaar details</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-address-card"></i></div>
+<div class="service-text"><h3>PAN Update</h3><span>Link/update PAN details</span></div>
+</div>
+<div class="price-seal">₹250</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-building-columns"></i></div>
+<div class="service-text"><h3>Bank Update</h3><span>Update linked bank account</span></div>
+</div>
+<div class="price-seal">₹250</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+<div class="service-text"><h3>Mobile Number Update</h3><span>Update registered mobile number</span></div>
+</div>
+<div class="price-seal">₹150</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-envelope"></i></div>
+<div class="service-text"><h3>Email Update</h3><span>Update registered email ID</span></div>
+</div>
+<div class="price-seal">₹100</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-location-dot"></i></div>
+<div class="service-text"><h3>Address Update</h3><span>Update residential address</span></div>
+</div>
+<div class="price-seal">₹80</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-user-plus"></i></div>
+<div class="service-text"><h3>E-Nomination</h3><span>Add or update your nominee</span></div>
+</div>
+<div class="price-seal">₹250</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+<div class="service-text"><h3>Joint Declaration</h3><span>Form 11 - Joint request</span></div>
+</div>
+<div class="price-seal">₹500-1500</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-door-open"></i></div>
+<div class="service-text"><h3>Exit Date Update</h3><span>Correct date of exit</span></div>
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-file-invoice"></i></div>
+<div class="service-text"><h3>UAN Passbook / Statement</h3><span>Get PF passbook statement</span></div>
+</div>
+<div class="price-seal">₹50</div>
+</div>
+
+  <div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+<div class="service-text"><h3>Offline Work</h3><span>In-person / manual assistance</span></div>
+</div>
+<div class="price-seal">₹1500-2000</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-ellipsis"></i></div>
+<div class="service-text"><h3>Others</h3><span>Any other EPFO related issue</span></div>
+  
+</div>
+<div class="price-seal">₹....</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-user-check"></i></div>
+<div class="service-text"><h3>UAN DEACTIVATE</h3><span>  </span></div>
+  
+</div>
+<div class="price-seal">₹18000-25000</div>
+</div>
+
+<div class="service-item">
+<div class="service-main">
+<div class="service-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+<div class="service-text"><h3>Grievance Filing</h3><span>EPFiGMS complaint assistance</span></div>
+</div>
+<div class="price-seal">₹200</div>
+</div>
+
+</div>
+
+<a href="https://wa.me/919775515990" class="book-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Book On WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<footer style="text-align:center;padding:25px;background:#0d6efd;color:#fff;">
+
+© 2026 MyTaxCore. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
