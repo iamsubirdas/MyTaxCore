@@ -115,3 +115,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/* ---- Banner slider (auto-rotate every 2s) ---- */
+  var bannerTrack = document.querySelector("[data-banner-slider]");
+  if (bannerTrack) {
+    var slides = bannerTrack.querySelectorAll(".banner-slide");
+    var dotsWrap = document.querySelector("[data-banner-dots]");
+    var current = 0;
+
+    slides.forEach(function (_, i) {
+      var dot = document.createElement("span");
+      if (i === 0) dot.classList.add("is-active");
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll("span");
+
+    setInterval(function () {
+      slides[current].classList.remove("is-active");
+      dots[current].classList.remove("is-active");
+      current = (current + 1) % slides.length;
+      slides[current].classList.add("is-active");
+      dots[current].classList.add("is-active");
+    }, 4000);
+  }
